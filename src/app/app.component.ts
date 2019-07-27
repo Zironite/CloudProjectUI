@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CloudSearchApiService } from './cloud-search-api.service';
+import { IResults } from './i-results';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,12 @@ import { CloudSearchApiService } from './cloud-search-api.service';
 export class AppComponent {
   title = 'CloudProjectUI';
   model = '';
+  results: IResults = { results: [] };
 
   constructor(private cloudSearchApiService: CloudSearchApiService) {}
   onSearchButtonClick() {
     this.cloudSearchApiService.search(this.model).subscribe(results => {
-      results.results.forEach(result => console.log(result));
+      this.results = results;
     });
   }
 }
