@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://ec2-100-24-61-182.compute-1.amazonaws.com'
+  apiUrl: 'http://query-twitter-api-1963156312.us-east-1.elb.amazonaws.com'
 };
